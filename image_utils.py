@@ -8,7 +8,7 @@ def to_grayscale(image):
 # function to apply a gaussian blur to the card to reduce noise, takes in grayscale image returns blur image, kernel size is default 
 def apply_gaussian_blur(image, kernel_size=5):
     
-    return cv2.GaussianBlur(image, kernel_size, 0)
+    return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
 
 # function to detect edges in the image using the canary edge detector
 def detect_edges(image, lower_threshold=50, upper_threshold=150):

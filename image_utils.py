@@ -10,3 +10,13 @@ def apply_gaussian_blur(image, kernel_size=5):
     
     return cv2.GaussianBlur(image, kernel_size, 0)
 
+# function to detect edges in the image using the canary edge detector
+def detect_edges(image, lower_threshold=50, upper_threshold=150):
+
+    return cv2.Canny(image, lower_threshold, upper_threshold)
+
+# funciton to find the contours in the image that is edge detected
+def find_contours(edge_image):
+
+    contours, _ = cv2.findContours(edge_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    return contours
